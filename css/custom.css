@@ -62,7 +62,12 @@
 .hero-app-icon {
   width: clamp(96px, 16vw, 132px);
   height: auto;
-  box-shadow: 0 24px 60px rgba(109, 71, 230, 0.45), 0 4px 14px rgba(0, 0, 0, 0.18);
+  border-radius: 0;
+  /* No box-shadow: a box-shadow follows the square element box and rings the
+     icon's transparent rounded corners. drop-shadow() follows the artwork's
+     alpha, so the shadow hugs the squircle with no pale border. */
+  box-shadow: none;
+  filter: drop-shadow(0 16px 30px rgba(109, 71, 230, 0.35));
 }
 .hero-wordmark {
   margin: 0.9rem 0 0.4rem;
